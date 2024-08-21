@@ -22,7 +22,7 @@ var app = {
             // This code runs once the value has been loaded
             // from the offline store.
             if (value === null) {
-                //console.log("NOT SET");
+                //console.log("NOT SET");   
                 var p_transaction = {
                     LOG: 0,
                     parcels: [],
@@ -78,7 +78,7 @@ var app = {
     openParcels: function() {
         location.href = "sent_parcels.html";
     },
-
+    
     openQuotas: function() {
         location.href = "quota.html";
     },
@@ -125,11 +125,11 @@ var app = {
                 app.curr_merchant_sub_type=dat.merchant_sub_type;
                 $("#profile_name").text(name);
                 $("#home_name").text(name);
-
+                
                // $("#profile_stage").text(stage);
             } else {
                app.toastIt('Please Log In', 2000, 'red accent-2');
-
+           
                 //location.href = "index.html";
             }
 
@@ -170,7 +170,7 @@ var app = {
             $("#current_user").text(U_NAME);
 
 
-
+           
             var json_outlets=dat.outlets;
             html_code="";
 
@@ -186,14 +186,14 @@ var app = {
                         //count_i++;
                         html_code= html_code + '<div class="col s12 m6"><div class="card blue darken-4"><div class="card-content white-text"><span class="card-title">'+name+'</span>'+phone_number+'<br>'+talk_to+'<br>'+designation+'<br>'+loc+'</div>  <div class="card-action"> <div class="row"> <div class="col s6 m6"><a href="#" data-id="'+id+'" data-name="'+name+'" data-talkto="'+talk_to+'" data-loc="'+loc+'" data-phone_number="'+phone_number+'"  data-designation="'+designation+'" class="btn yellow darken-4 waves-effect waves-light calls">Calls</a></div> <div class="col s6 m6"><a href="#" data-id="'+id+'" data-name="'+name+'" data-talkto="'+talk_to+'" data-loc="'+loc+'" data-phone_number="'+phone_number+'"  data-designation="'+designation+'" class="btn btn-block pink waves-effect waves-light pre-pro">Pre Pro</a></div></div></div></div></div>';
                     }
-
-
+            
+          
             $("#p_to").html(html_code);
 
 
 
 
-
+            
 
 
         }).catch(function(err) {
@@ -214,7 +214,7 @@ var app = {
              var json_pmtaani_locations=dat.locations;
             var locs=json_pmtaani_locations.length;
              var html_code = "";
-            for (var i = 0; i < locs; i++)
+            for (var i = 0; i < locs; i++) 
             {
             //html_code = "<tr>";
            // console.log(json_pmtaani_locations[i].location_name);
@@ -225,13 +225,13 @@ var app = {
                 var json_pmtaani_agent_locations=dat.agent_locations;
                 var locsx=json_pmtaani_agent_locations.length;
                // var html_code = "<span>";
-                for (var x = 0; x < locsx; x++)
+                for (var x = 0; x < locsx; x++) 
                 {
                     console.log(json_pmtaani_agent_locations[x].agent_location);
-
+                    
                      current_pmtaani_agent_location=json_pmtaani_agent_locations[x].location;
                      current_pmtaani_agent_location_id=json_pmtaani_agent_locations[x].id;
-                     if (p_m_location_id==current_pmtaani_agent_location)
+                     if (p_m_location_id==current_pmtaani_agent_location) 
                      {
                        html_code = html_code + '<div class="current_pm_location yellow_text black accent-3">' + json_pmtaani_agent_locations[x].agent_location + '</div>';
 
@@ -239,18 +239,18 @@ var app = {
                         /*var json_pmtaani_agent_offices=dat.agent_offices;
                         var locsy=json_pmtaani_agent_offices.length;
                        // var html_code = "";
-                        for (var y = 0; y < locsy; y++)
+                        for (var y = 0; y < locsy; y++) 
                         {
                           // console.log(json_pmtaani_agent_offices[i].name);
                            office_location=json_pmtaani_agent_offices[y].agent_location;
-                           if (office_location==current_pmtaani_agent_location_id)
+                           if (office_location==current_pmtaani_agent_location_id) 
                            {
                              html_code = html_code + '<div class="office yellow_text  black accent-2">' + json_pmtaani_agent_offices[y].name + '</div>';
                            }
-
+                            
                         }*/
                        /**************AGENT*************/
-
+      
                      }
                 }
 
@@ -258,9 +258,9 @@ var app = {
 
             }
 
-
-
-
+          
+         
+          
             $("#refresh_details").html(html_code);
 
 
@@ -271,10 +271,10 @@ var app = {
         });
     },
     getLoading: function() {
-
+        
         var current_stage = $("#current_stage").text();
         var unsanitized_date = $("#date_selected").val();
-
+        
         var serialized = "p_agent_location=" + app.current_location_id + "&date=" + unsanitized_date ;
      //   var print_str="\nFROM: "+ current_stage+" TO: "+p_to+"\n******************************";
        app.TIDS=[];
@@ -298,7 +298,7 @@ var app = {
                     app.temp_sent_to_me=server_response.items;
                     for (var key in server_response.items) {
 
-                        // id,sender_name,receiver_name, parcel_description, ,
+                        // id,sender_name,receiver_name, parcel_description, , 
 
                         sender_name = server_response.items[key].sender_name;
                         receiver_name = server_response.items[key].receiver_name;
@@ -313,12 +313,12 @@ var app = {
                          html_code = html_code + '<div data-id="'+key+'"  class="maleo-card p_sent_to_me maleo-event_list margin-bottom_low animated fadeInUp"><div id="p_' + id + '" class="event-date yellow"><span class="month">&nbsp;</span><span class="date">' + parcel_cost + '</span><span class="year">' + receipt_no + '</span></div><div class="event-content"><div class="event-name"><a href="#">' + parcel_description + '</a></div><div class="event-location"> <strong>From:</strong> ' + sender_location + '<br><strong>Sender:</strong> ' + sender_name + '<br> <strong>Recipient:</strong> ' + receiver_name + '</div></div></div>';
                         //print_str=print_str+ "\nSender: "+sender_name+ "\nRecipient:"+receiver_name+"\nReceipt: "+receipt_no+"\nCost:"+parcel_cost+"\nDescription:"+parcel_description+"\n-------------------------------\n";
 
-
+                   
 count_i++;
                     }
                     app.toastIt('Displaying Records for  ' + unsanitized_date, 2000, 'green accent-3');
-
-                }
+                  
+                } 
                 else if(response == "0")
                 {
                     app.toastIt('No Records found for ' + unsanitized_date, 2000, 'red accent-2');
@@ -327,7 +327,7 @@ count_i++;
                 }
 
                 else  {
-
+                   
                      app.toastIt('Unable to get data' + unsanitized_date, 2000, 'red accent-2');
                     html_code = html_code + '<div class="load_div"><h5>There was an issue trying to get the data' + unsanitized_date + '</h5></div>';
                 }
@@ -336,7 +336,7 @@ count_i++;
             }
             ,
                 error: function(jqXHR, textStatus, errorThrown) {
-
+                    
                    // $('#get_loading').text('Loading Sheet');
                     swal("Error", "Could not load data", "error");
                 }
@@ -410,11 +410,11 @@ count_i++;
             // var indices=array();
             //  var dat = dat2.parcels;
             len = dat.parcels.length;
-            //         console.log("LEN "+len)
+            //         console.log("LEN "+len)       
             for (var i = 0; i < len; i++) {
                 //console.log(dat.parcels[i].tid)
                 len2 = dat.parcels.length;
-
+               
                 parcel_date = dat.parcels[i].t_date;
 
                  // console.log("DEL "+current_date+"---"+parcel_date);
@@ -558,15 +558,15 @@ count_i++;
 
                     if (response == "success") {
 
-
+                        
                         stage = server_response.stage;
-
+                       
                         name = server_response.name;
                         prefix = server_response.prefix;
                         user_id = server_response.user_id;
                         location_id = server_response.location_id;
                         stage = server_response.stage;
-
+                       
                         locations = server_response.locations;
                         agent_locations = server_response.agent_locations;
                         agent_offices=server_response.agent_offices;
@@ -579,15 +579,15 @@ count_i++;
                             p_tranc.name = name;
                             p_tranc.prefix = prefix;
                             p_tranc.stage = stage;
-                           // p_tranc.routes = routes;
+                           // p_tranc.routes = routes;                            
                             p_tranc.name = name;
                             p_tranc.user_id = user_id;
-                            p_tranc.location_id = location_id;
-
+                            p_tranc.location_id = location_id;                            
+                           
                             p_tranc.locations = locations;
                             p_tranc.agent_locations = agent_locations;
                             p_tranc.agent_offices = agent_offices;
-
+                           
 
 
 
@@ -626,7 +626,7 @@ count_i++;
         });
     },
 
-
+  
     loadContent: function() {
         app.MA3PARCEL.getItem('PARCEL_TRANSACTION').then(function(p_tranc) {
             dat = JSON.parse(p_tranc);
@@ -672,7 +672,7 @@ count_i++;
 
 
                         html_code = html_code + '<div  class="maleo-card maleo-event_list margin-bottom_low animated fadeInUp"><div id="p_' + tid + '" class="event-date ' + cls + '"><span class="month">&nbsp;</span><span class="date">' + amount + '</span><span class="year">' + receipt_number + '</span></div><div class="event-content"><div class="event-name"><a href="#">' + description + '</a></div><div class="event-location"> <strong>From:</strong> ' + p_from + ' <i class="fa fa-arrow-right"></i> <strong>To:</strong>' + p_to + '<br><strong>Sender:</strong> ' + sender_name + '<br> <strong>Recipient:</strong> ' + recipient_name + '</div></div></div>';
-                        /*if (status==0)
+                        /*if (status==0) 
                         {
                             html_code=html_code+'<tr class="table-danger" ><td  >'+i+'</td><td>'+phone+'</td><td>'+sku+'</td><td>'+age+'</td><td>'+gender+'</td><td>'+prize+'</td></tr>';
                         }
@@ -682,7 +682,7 @@ count_i++;
                             html_code=html_code+'<tr class="table-success" ><td  >'+i+'</td><td>'+phone+'</td><td>'+sku+'</td><td>'+age+'</td><td>'+gender+'</td><td>'+prize+'</td></tr>';
                         }*/
 
-                        // console.log(dat2);
+                        // console.log(dat2); 
                         $("#parcel_data").html(html_code);
                     }
                 }
@@ -919,11 +919,11 @@ count_i++;
                    // app.updateStatus(success, 1);
                    swal("Pre-Pro Transaction Uploaded Sucessfully", "", "success");
                     app.toastIt('Transaction Uploaded Sucessfully', 2000, 'green accent-4');
-
+                    
                     setTimeout(function(args) {
                          location.reload();
                     }, 2000)
-
+                   
                 } else {
                     console.log("ERR");
                 }
@@ -936,7 +936,7 @@ count_i++;
     {
         var shouldProceed=true;
         //p_from = $('#p_from').val();
-
+        
        // p_to = $('#p_to').val();
         designation = $('#designation').val();
         address = $('#address').val();
@@ -944,7 +944,7 @@ count_i++;
         book_time = $('#book_time').val();
         book_date = $('#book_date').val();
         comment = $('#comment').val();
-
+       
 
          if(!address)
         {
@@ -977,11 +977,11 @@ count_i++;
              $('#book_date').focus();
              shouldProceed=false;
         }
+        
+       
+        
 
-
-
-
-
+    
 
     return shouldProceed;
     },
@@ -1000,11 +1000,11 @@ count_i++;
         trifold_leaflet = $('#trifold_leaflet').val();
         a4_sticker = $('#a4_sticker').val();
         a5_sticker = $('#a5_sticker').val();
-        till_sticker = $('#till_sticker').val();
+        till_sticker = $('#till_sticker').val();       
         pdq_state = $('#pdq_state').val();
         training_date=$('#training_date').val();
         branding_date=$('#branding_date').val();
-
+       
         comment = $('#comment').val();
         //tent_cards = $('#tent_cards').val();
 
@@ -1033,11 +1033,11 @@ count_i++;
              $('#pdq_state').focus();
              shouldProceed=false;
         }
+        
+       
+        
 
-
-
-
-
+    
 
     return shouldProceed;
     },
@@ -1056,11 +1056,11 @@ count_i++;
         trifold_leaflet = $('#trifold_leaflet').val();
         a4_sticker = $('#a4_sticker').val();
         a5_sticker = $('#a5_sticker').val();
-        till_sticker = $('#till_sticker').val();
+        till_sticker = $('#till_sticker').val();       
         pdq_state = $('#pdq_state').val();
         training_date=$('#training_date').val();
         branding_date=$('#branding_date').val();
-
+       
         comment = $('#comment').val();
         //tent_cards = $('#tent_cards').val();
 
@@ -1083,12 +1083,12 @@ count_i++;
              $('#loc').focus();
              shouldProceed=false;
         }
+       
+        
+       
+        
 
-
-
-
-
-
+    
 
     return shouldProceed;
     },
@@ -1097,9 +1097,9 @@ count_i++;
     },
     saveData: function() {
             var formStatus=app.validateForm();
-            if (formStatus)
+            if (formStatus) 
             {
-
+       
         designation = $('#designation').val();
         address = $('#address').val();
         landmark = $('#landmark').val();
@@ -1133,7 +1133,7 @@ count_i++;
             t_time = app.timeNow();
             t_date = app.todayDate();
             receipt_number = prefix + " " + quota_current;
-
+            
             Upload_object.parcels.push({
                 "book_date": book_date,
                 "outlet": outlet_id,
@@ -1142,7 +1142,7 @@ count_i++;
                 "user_id": user_id,
                 "landmark": landmark,
                 "address": address,
-                "designation": designation,
+                "designation": designation,               
                 "t_date": t_date,
                 "t_time": t_time
             });
@@ -1154,7 +1154,7 @@ count_i++;
             q_end = Number(quota_end);
             app.MA3PARCEL.setItem('PARCEL_TRANSACTION', JSON.stringify(p_tranc)).then(function(value) {
                 str = "";
-
+            
                 app.tryAndUpload(Upload_object);
               //  $("#parcel_form")[0].reset();
                // app.checkQuotas();
@@ -1170,16 +1170,16 @@ count_i++;
 
     }//vorm validator
 
-
-
-
+           
+        
+        
     },
 
     saveData2: function() {
             var formStatus=app.validateForm2();
-            if (formStatus)
+            if (formStatus) 
             {
-
+       
          merchant_name = $('#merchant_name').val();
         outlet_name = $('#outlet_name').val();
         loc = $('#loc').val();
@@ -1191,7 +1191,7 @@ count_i++;
         trifold_leaflet = $('#trifold_leaflet').val();
         a4_sticker = $('#a4_sticker').val();
         a5_sticker = $('#a5_sticker').val();
-        till_sticker = $('#till_sticker').val();
+        till_sticker = $('#till_sticker').val();       
         pdq_state = $('#pdq_state').val();
         training_date=$('#training_date').val();
         training_time=$('#branding_date').val();
@@ -1199,19 +1199,19 @@ count_i++;
         rba_name=$('#rba_name').text();
         rba_phone=$('#rba_phone').text();
         rba_region=$('#rba_region').text();
-
+        
       //  outlet_id = app.flashStore.getItem('OUTLET_ID');;
         //comment = $('#comment').val();
 
 
 
-
+       
             var Upload_object = {
                 parcels: []
             };
             t_time = app.timeNow();
             t_date = app.todayDate();
-
+            
 
             Upload_object.parcels.push({
                 "merchant_name": merchant_name,
@@ -1226,11 +1226,11 @@ count_i++;
                 "tent_cards": tent_cards,
                 "trifold_leaflet": trifold_leaflet,
                 "a5_sticker": a5_sticker,
-                "a4_sticker": a4_sticker,
+                "a4_sticker": a4_sticker,               
                 "till_sticker": till_sticker,
-                "pdq_state": pdq_state,
+                "pdq_state": pdq_state,               
                 "training_date": training_date,
-                "branding_date": branding_date,
+                "branding_date": branding_date,               
                 "t_date": t_date,
                 "t_time": t_time,
                 "user_name": rba_name,
@@ -1238,25 +1238,25 @@ count_i++;
                 "user_region": rba_region
             });
 
-
+           
             app.tryAndUpload2(Upload_object);
+            
 
 
-
-
+        
 
     }//vorm validator
 
-
-
-
+           
+        
+        
     },
 
     saveData3: function() {
             var formStatus=app.validateForm3();
-            if (formStatus)
+            if (formStatus) 
             {
-
+       
          merchant_name = $('#merchant_name').val();
         outlet_name = $('#outlet_name').val();
         loc = $('#loc').val();
@@ -1268,7 +1268,7 @@ count_i++;
         trifold_leaflet = $('#trifold_leaflet').val();
         a4_sticker = $('#a4_sticker').val();
         a5_sticker = $('#a5_sticker').val();
-        till_sticker = $('#till_sticker').val();
+        till_sticker = $('#till_sticker').val();       
         branding_done = $('#branding_done').val();
         training_date=$('#training_date').val();
         branding_date=$('#branding_date').val();
@@ -1276,19 +1276,19 @@ count_i++;
         rba_name=$('#rba_name').text();
         rba_phone=$('#rba_phone').text();
         rba_region=$('#rba_region').text();
-
+        
       //  outlet_id = app.flashStore.getItem('OUTLET_ID');;
         //comment = $('#comment').val();
 
 
 
-
+       
             var Upload_object = {
                 parcels: []
             };
             t_time = app.timeNow();
             t_date = app.todayDate();
-
+            
 
             Upload_object.parcels.push({
                 "merchant_name": merchant_name,
@@ -1303,11 +1303,11 @@ count_i++;
                 "tent_cards": tent_cards,
                 "trifold_leaflet": trifold_leaflet,
                 "a5_sticker": a5_sticker,
-                "a4_sticker": a4_sticker,
+                "a4_sticker": a4_sticker,               
                 "till_sticker": till_sticker,
-                "pdq_state": pdq_state,
+                "pdq_state": pdq_state,               
                 "training_date": training_date,
-                "branding_date": branding_date,
+                "branding_date": branding_date,               
                 "t_date": t_date,
                 "t_time": t_time,
                 "user_name": rba_name,
@@ -1315,18 +1315,18 @@ count_i++;
                 "user_region": rba_region
             });
 
-
+           
             app.tryAndUpload2(Upload_object);
+            
 
 
-
-
+        
 
     }//vorm validator
 
-
-
-
+           
+        
+        
     },
 
     logOut: function() {
@@ -1367,7 +1367,7 @@ count_i++;
 
 
     },
-
+   
     deviceOnline: function() {
 
         //put marker/indicator green
@@ -1384,11 +1384,11 @@ count_i++;
     deviceOffline: function() {
         //put marker/indicator red
     },
-
+   
    noAcceptance:function()
     {
        acceptance= $("#customer_win").val();
-       if (acceptance=="Yes")
+       if (acceptance=="Yes") 
        {
         $("#item_won").show();
        }
@@ -1400,7 +1400,7 @@ count_i++;
     destinationChanged:function()
     {
        current_val= $("#merchant_type").val();
-
+    
              var merchant_sub_type=app.curr_merchant_sub_type;
             var locs=merchant_sub_type.length;
              var html_code = "<option disabled selected>Choose Sub Merchant</option>";
@@ -1410,7 +1410,7 @@ count_i++;
                      sub_merch=merchant_sub_type[i].merchant;
                     // console.log(json_pmtaani_agent_locations[i].location+"-"+current_val);
 
-                     if (sub_merch==current_val)
+                     if (sub_merch==current_val) 
                      {
                           html_code = html_code + '<option value="' + sub_id+ '">' + sub_name + '</option>';
 
@@ -1418,30 +1418,30 @@ count_i++;
 
                            }
 
+            
 
-
-
+          
             $("#merchant_sub_type").html(html_code);
 
 
-
+      
     },
-
+   
     toastIt:function(message,length,classes)
     {
         M.toast({html:message, displayLength:length, classes:classes});
 
     },
     takeMeTo:function(current_loc,next_loc){
-    //window.scrollTo(0, 0);
+    //window.scrollTo(0, 0); 
     //$(".answer_text").removeClass("choice_selected");
-
+    
     $(current_loc).addClass('animate__animated animate__fadeOutLeft');
     $(current_loc).on('animationend webkitAnimationEnd oAnimationEnd', () => {
       $(current_loc).addClass("hidden");
-      $(next_loc).removeClass("animate__animated animate__fadeOutLeft");
+      $(next_loc).removeClass("animate__animated animate__fadeOutLeft");     
       $(next_loc).removeClass("hidden");
-
+      
       $(next_loc).addClass('animate__animated', 'animate__fadeInRight');
     });
 
@@ -1510,7 +1510,7 @@ prepareTraining:function(){
         var designation=app.flashStore.getItem('designation');
         var phone_number=app.flashStore.getItem('phone_number');
 
-
+        
         $("#OUTLET_NAME").text(c_outlet_name);
         $("#OUTLET_ID").text(c_outlet_id);
         $("#outlet_id_1").val(c_outlet_id);
@@ -1519,7 +1519,7 @@ prepareTraining:function(){
         $("#designation_").text(designation);
         $("#phone_number").text(phone_number);
 
-
+        
        // $("#OUTLET_NAME").text(c_outlet_name);
 
       //  app.preProDetails(c_outlet_id)
@@ -1544,7 +1544,7 @@ prepareTraining:function(){
 
                     $("#merchant_type").html(html_code);
 
-
+        
         $("#OUTLET_NAME").text(c_outlet_name);
         $("#OUTLET_ID").text(c_outlet_id);
         $("#talkto").text(talkto);
@@ -1567,9 +1567,9 @@ outlet=app.flashStore.getItem('OUTLET_ID');
 app.preProDetails(outlet)
     },
 
-    preProDetails: function(outlet) {
-        var serialized = "outlet=" + outlet+"&team_leader="+app.logged_in_user_id ;
-
+    preProDetails: function(outlet) {      
+        var serialized = "outlet=" + outlet+"&team_leader="+app.logged_in_user_id ;   
+        
         $.ajax({
             type: "POST",
             url: app.LINK + "fetchPrepro.php",
@@ -1586,11 +1586,11 @@ app.preProDetails(outlet)
                 html_code = '';
                 if (response == "success") {
 
-      // `team_leader_id`, `outlet_id`, `physical_address`, ``, ``, ``, ``,
+      // `team_leader_id`, `outlet_id`, `physical_address`, ``, ``, ``, ``,             
                   //  app.temp_sent_to_me=server_response.physical_address;
                   str=server_response.items[0];
 
-
+                  
 
      $('#merchant_type').val(str.merchant_type);
 
@@ -1603,14 +1603,14 @@ app.preProDetails(outlet)
                      sub_merch=merchant_sub_type[i].merchant;
                     // console.log(json_pmtaani_agent_locations[i].location+"-"+current_val);
 
-                     if (sub_merch==str.merchant_type)
+                     if (sub_merch==str.merchant_type) 
                      {
                           html_code = html_code + '<option value="' + sub_id+ '">' + sub_name + '</option>';
 
                      }
 
                            }
-
+          
             $("#merchant_sub_type").html(html_code);
 
      $('#merchant_sub_type').val(str.merchant_sub_type);
@@ -1638,25 +1638,25 @@ app.preProDetails(outlet)
      $('#union_pay').val(str.union_pay);
      $('#comment').val(str.comment)
 
+       
 
 
-
-
+                    
                  app.toastIt('Displaying Fetched Data', 2000, 'green accent-3');
-
-                }
+                  
+                } 
                 else if(response == "0")
                 {
                      $('#load_pp').html('<i class="fa fa-refresh"></i> Load Details');
-
+               
                     app.toastIt('No Records found ', 2000, 'red accent-2');
-
+                  
                 }
 
                 else  {
                      $('#load_pp').html('<i class="fa fa-refresh"></i> Load Details');
-
-
+               
+                   
                   //   app.toastIt('Unable to get data' + date_selected, 2000, 'red accent-2');
 
   html_code = html_code + '<div class="load_div card-panel red "><span class="white-text"><h6>There was an issue trying to get the data </h6></span></div>';
@@ -1668,15 +1668,15 @@ app.preProDetails(outlet)
             }
             ,
                 error: function(jqXHR, textStatus, errorThrown) {
-
+                    
                    // $('#get_loading').text('Loading Sheet');
                     swal("Error", "Could not load data", "error");
                 }
         });
     },
-     outletDetails: function(outlet) {
-        var serialized = "outlet=" + outlet+"&team_leader="+app.logged_in_user_id ;
-
+     outletDetails: function(outlet) {      
+        var serialized = "outlet=" + outlet+"&team_leader="+app.logged_in_user_id ;   
+        
         $.ajax({
             type: "POST",
             url: app.LINK + "fetchCalls.php",
@@ -1693,7 +1693,7 @@ app.preProDetails(outlet)
                 html_code = '';
                 if (response == "success") {
 
-      // `team_leader_id`, `outlet_id`, `physical_address`, ``, ``, ``, ``,
+      // `team_leader_id`, `outlet_id`, `physical_address`, ``, ``, ``, ``,             
                   //  app.temp_sent_to_me=server_response.physical_address;
                   str=server_response.items[0];
 
@@ -1705,22 +1705,22 @@ app.preProDetails(outlet)
         $('#comment').val(str.comment);
 
 
-
+                    
                  app.toastIt('Displaying Fetched Data', 2000, 'green accent-3');
-
-                }
+                  
+                } 
                 else if(response == "0")
                 {
                      $('#load_parcels').html('<i class="fa fa-refresh"></i> Load Details');
-
+               
                     app.toastIt('No Records found ', 2000, 'red accent-2');
-
+                  
                 }
 
                 else  {
                      $('#load_parcels').html('<i class="fa fa-refresh"></i> Load Details');
-
-
+               
+                   
                   //   app.toastIt('Unable to get data' + date_selected, 2000, 'red accent-2');
 
   html_code = html_code + '<div class="load_div card-panel red "><span class="white-text"><h6>There was an issue trying to get the data </h6></span></div>';
@@ -1732,7 +1732,7 @@ app.preProDetails(outlet)
             }
             ,
                 error: function(jqXHR, textStatus, errorThrown) {
-
+                    
                    // $('#get_loading').text('Loading Sheet');
                     swal("Error", "Could not load data", "error");
                 }
@@ -1755,13 +1755,13 @@ app.preProDetails(outlet)
                         date_time = app.dates[key].date_time;
                       html_code = html_code + "<option value=" + date_time + ">" + date_time + "</option>";
 
-
+                       
                       //  html_code= html_code + '<div class="col s12 m6"><div class="card blue darken-4"><div class="card-content white-text"><span class="card-title">'+name+'</span>'+phone_number+'<br>'+talk_to+'<br>'+designation+'<br>'+loc+'</div>  <div class="card-action"> <div class="row"> <div class="col s6 m6"><a href="#" data-id="'+id+'" data-name="'+name+'" data-talkto="'+talk_to+'" data-loc="'+loc+'" data-phone_number="'+phone_number+'"  data-designation="'+designation+'" class="btn yellow darken-4 waves-effect waves-light calls">Calls</a></div> <div class="col s6 m6"><a href="#" data-id="'+id+'" data-name="'+name+'" data-talkto="'+talk_to+'" data-loc="'+loc+'" data-phone_number="'+phone_number+'"  data-designation="'+designation+'" class="btn btn-block pink waves-effect waves-light pre-pro">Pre Pro</a></div></div></div></div></div>';
                     }
 
                     $("#book_date").html(html_code);
 
-
+        
         $("#OUTLET_NAME").text(c_outlet_name);
         $("#OUTLET_ID").text(c_outlet_id);
         $("#talkto").text(talkto);
@@ -1773,12 +1773,12 @@ app.preProDetails(outlet)
         app.outletDetails(c_outlet_id)
 
     },
+    
 
 
-
-    outletDetails: function(outlet) {
-        var serialized = "outlet=" + outlet+"&team_leader="+app.logged_in_user_id ;
-
+    outletDetails: function(outlet) {      
+        var serialized = "outlet=" + outlet+"&team_leader="+app.logged_in_user_id ;   
+        
         $.ajax({
             type: "POST",
             url: app.LINK + "fetchCalls.php",
@@ -1795,7 +1795,7 @@ app.preProDetails(outlet)
                 html_code = '';
                 if (response == "success") {
 
-      // `team_leader_id`, `outlet_id`, `physical_address`, ``, ``, ``, ``,
+      // `team_leader_id`, `outlet_id`, `physical_address`, ``, ``, ``, ``,             
                   //  app.temp_sent_to_me=server_response.physical_address;
                   str=server_response.items[0];
 
@@ -1807,22 +1807,22 @@ app.preProDetails(outlet)
         $('#comment').val(str.comment);
 
 
-
+                    
                  app.toastIt('Displaying Fetched Data', 2000, 'green accent-3');
-
-                }
+                  
+                } 
                 else if(response == "0")
                 {
                      $('#load_parcels').html('<i class="fa fa-refresh"></i> Load Details');
-
+               
                     app.toastIt('No Records found ', 2000, 'red accent-2');
-
+                  
                 }
 
                 else  {
                      $('#load_parcels').html('<i class="fa fa-refresh"></i> Load Details');
-
-
+               
+                   
                   //   app.toastIt('Unable to get data' + date_selected, 2000, 'red accent-2');
 
   html_code = html_code + '<div class="load_div card-panel red "><span class="white-text"><h6>There was an issue trying to get the data </h6></span></div>';
@@ -1834,14 +1834,14 @@ app.preProDetails(outlet)
             }
             ,
                 error: function(jqXHR, textStatus, errorThrown) {
-
+                    
                    // $('#get_loading').text('Loading Sheet');
                     swal("Error", "Could not load data", "error");
                 }
         });
     },
 
-    getOutletDetails:function(){
+    getOutletDetails:function(){       
         var c_outlet_name=app.flashStore.getItem('OUTLET_NAME');
         var c_outlet_id=app.flashStore.getItem('OUTLET_ID');
         //$("#c_agent_name").text(c_outlet_name);
@@ -1853,11 +1853,11 @@ app.preProDetails(outlet)
     },
       prefill:function()
     {
-
+      
          name= app.flashStore.getItem("name");
           phone=app.flashStore.getItem("phone");
           region=app.flashStore.getItem("region");
-      if (!name||!phone||!region)
+      if (!name||!phone||!region) 
       {
         swal("Please Register","URegister to send Data","error")
         setTimeout(function(){
@@ -1866,27 +1866,27 @@ app.preProDetails(outlet)
       }
       else
       {
-
+         
           $("#ba_name").val(name);
           $("#ba_phone").val(phone);
           $("#ba_region").val(region);
-
+         
 
           $("#rba_name").text(name);
           $("#rba_phone").text(phone);
           $("#rba_region").text(region);
       }
-
-
+         
+          
 
     },
 
     searchValues: function() {
 
-
+        
 
             search_term = $("#search_term").val()
-
+           
 
             data = "search_term=" + search_term ;
             $.ajax({
@@ -1912,7 +1912,7 @@ app.preProDetails(outlet)
                     response = server_response.response;
                     console.log(response);
                     if (response == 'success') {
-                        $('#search').text('Search');
+                        $('#search').text('Search');                                              
                         outlets2 = server_response.outlets;
 
                         var json_outlets=outlets2;
@@ -1930,8 +1930,8 @@ app.preProDetails(outlet)
                         //count_i++;
                         html_code= html_code + '<div class="col s12 m6"><div class="card blue-grey darken-4"><div class="card-content white-text"><span class="card-title">'+name+'</span>'+loc+'<br>'+acquirer+'</div>  <div class="card-action"> <div class="row"> <div class="col s12 m12"><a href="#" data-id="'+id+'" data-name="'+name+'" data-acquirer="'+talk_to+'" data-loc="'+loc+'" data-phone_number="'+0+'"  data-designation="'+0+'" class="btn btn-block teal waves-effect waves-light training">Branding</a> </div></div></div></div></div>';
                     }
-
-
+            
+          
             $("#display_outlet_content").html(html_code);
 
 
@@ -1956,13 +1956,13 @@ app.preProDetails(outlet)
                     else
                     {
 
-                        swal("Error", "Could not connect to the server", "error");
+                        swal("Error", "Could not connect to the server", "error");  
                     }
-
+                    
                 }
 
             });
-
+        
 
 
     },
@@ -1973,29 +1973,29 @@ locSuccess:function(position)
 {
     $("#latitude").val(position.coords.latitude);
     $("#longitude").val(position.coords.longitude);
-
+     
 
 },
 locError:function()
 {
     $("#latitude").val(error.code);
     $("#longitude").val(error.message);
-
+    
 },
     registerBA: function() {
             var formStatus=app.validateForm3();
-            if (formStatus)
+            if (formStatus) 
             {
-
+       
         name = $('#ba_name').val();
         phone = $('#ba_phone').val();
         region = $('#ba_region').val();
 
-
+         
           app.flashStore.setItem("name", name);
-          app.flashStore.setItem("phone", phone);
+          app.flashStore.setItem("phone", phone);         
           app.flashStore.setItem("region", region);
-
+        
 
 swal("Registration Successfull","You have been registered successfully","success")
         setTimeout(function(){
@@ -2007,9 +2007,9 @@ swal("Registration Successfull","You have been registered successfully","success
 
     }//vorm validator
 
-
-
-
+           
+        
+        
     },
      validateForm3: function()
     {
@@ -2017,8 +2017,8 @@ swal("Registration Successfull","You have been registered successfully","success
         name = $('#ba_name').val();
         phone = $('#ba_phone').val();
         region = $('#ba_region').val();
-
-
+        
+        
 
          if(!name)
         {
@@ -2032,23 +2032,23 @@ swal("Registration Successfull","You have been registered successfully","success
              $('#phone').focus();
              shouldProceed=false;
         }
-
+        
         else if(!region)
         {
              app.appNotifier("Region is required");
              $('#region').focus();
              shouldProceed=false;
         }
-
+    
     return shouldProceed;
     },
-
+   
 goBack:function()
 {
      app.takeMeTo("#parcel_details","#sent_to_me");
 },
-search: function() {
-        var search_term = $("#search_term").val();
+search: function() {      
+        var search_term = $("#search_term").val();       
         var serialized = "search_term=" + search_term ;
         app.TIDS=[];
         $.ajax({
@@ -2071,7 +2071,7 @@ search: function() {
                     app.temp_sent_to_me=server_response.items;
                     for (var key in server_response.items) {
 
-                        // id,sender_name,receiver_name, parcel_description, ,
+                        // id,sender_name,receiver_name, parcel_description, , 
 
                         sender_name = server_response.items[key].sender_name;
                         receiver_name = server_response.items[key].receiver_name;
@@ -2085,7 +2085,7 @@ search: function() {
                         count_i++;
                     }
                     app.toastIt('Displaying Records for  ' + search_term, 2000, 'green accent-3');
-                }
+                } 
                 else if(response == "0")
                 {
                     app.toastIt('No Records found for ' + search_term, 2000, 'red accent-2');
@@ -2093,7 +2093,7 @@ search: function() {
 
                 }
 
-                else  {
+                else  {                   
                      app.toastIt('Unable to get data' + search_term, 2000, 'red accent-2');
                     html_code = html_code + '<div class="load_div"><h5>There was an issue trying to get the data' + search_term + '</h5></div>';
                 }
@@ -2136,3 +2136,5 @@ $('body').on('click', '#fetchLoc', app.getLoc);
 $( "#parcel_form" ).submit(function(event) { app.saveData; event.preventDefault();});
 app.initialize();
 //app.isLoggedIn();
+
+ 
