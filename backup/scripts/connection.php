@@ -1,8 +1,9 @@
 <?php 
-$host_name = 'localhost';
-  $database = 'skope_tz';
-  $user_name = 'root';
-  $password = '';
+$host_name="142.44.187.111";
+$user_name="machakos_transporters";
+$password="masaku sevens";
+$database="brand_yolk";
+
 
 date_default_timezone_set('Africa/Nairobi');
     $date = date('Y-m-d');

@@ -19,10 +19,10 @@
 
 	<nav>
 		<div class=" topmenu left_menu">
-
+      <a href="page.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
 		</div>
 		<div class=" topmenu centered_menu">
-			FEEDBACK
+			DEALER DATA
 		</div>
 		<div class=" topmenu right_menu">
     <a href="index.html" ><i class="fa fa-home fa-2x"></i></a>
@@ -55,18 +55,90 @@
            <input id="ba_name" name="ba_name"  type="hidden">
            <input id="ba_phone" name="ba_phone"  type="hidden">
            <input id="ba_region" name="ba_region"  type="hidden">
+           <input id="place" name="place" value="DEALER"  type="hidden">
 
 
 
         <!-- insert location details (gps) -->
+          <h1>LOCATION DETAILS</h1>
+
+
+      <div class="input-field col s12">
+          <span>Date</span><br>
+            <input id="sub_1_1" name="sub_1_1" placeholder="Date" type="date">
+
+        </div>
+
+          <div class="input-field col s12">
+          <span>Region</span><br>
+            <input id="sub_1_2" name="sub_1_2" placeholder="Region" type="text">
+
+        </div>
+          <div class="input-field col s12">
+          <span>Zone</span><br>
+            <input id="sub_1_3" name="sub_1_3" placeholder="Zone" type="text">
+
+        </div>
+        <h1>Questionnaire</h1>
 
         <div class="input-field col s12">
-          <span>1. Positive Feedback</span><br>
-            <input id="sub_1_1" name="sub_1_1" title="Positive Feedback" type="text">
+          <span>1. Promoter Name </span><br>
+            <input id="sub_1_4" name="sub_1_4" placeholder="Promoter Name" type="text">
+        </div>
+
+         <div class="input-field col s12">
+          <span>2. Contacts</span><br>
+            <input id="sub_1_5" name="sub_1_5" placeholder="Contacts" type="tel">
+        </div>
+
+        <div class="input-field col s12">
+          <span>3. RSM</span><br>
+            <input id="sub_1_6" name="sub_1_6" placeholder="RSM" type="text">
+
+        </div>
+
+        <div class="input-field col s12">
+          <span>3. Date of Sale</span><br>
+            <input id="sub_1_7" name="sub_1_7" placeholder="Date of Sale" type="date">
+        </div>
+
+        <div class="input-field col s12">
+          <span>4. Customer Name</span><br>
+            <input id="sub_1_8" name="sub_1_8" placeholder="Customer Name" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>5. Customer Contacts Number</span><br>
+            <input id="sub_1_9" name="sub_1_9" placeholder="Customer Contact" type="tel">
+        </div>
+
+        <div class="input-field col s12">
+          <span>6. Boxer Model</span><br>
+            <input id="sub_1_10" name="sub_1_10" placeholder="Boxer Model" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>7. No of Bike Purchased</span><br>
+            <input id="sub_1_11" name="sub_1_11" placeholder="Bike Purchased" type="number">
+        </div>
+
+        <div class="input-field col s12">
+          <span>8. Coupon Number</span><br>
+            <input id="sub_1_12" name="sub_1_12" placeholder="Coupon Number" type="number">
+        </div>
+
+        <div class="input-field col s12">
+          <span>9. Chasis Number</span><br>
+            <input id="sub_1_13" name="sub_1_13" placeholder="Chasis Number" type="number">
+        </div>
+
+        <div class="input-field col s12">
+          <span>10. Registration Number</span><br>
+            <input id="sub_1_14" name="sub_1_14" placeholder="Registration Number" type="text">
         </div>
         <div class="input-field col s12">
-          <span>2. Area of Improvement|negative feedback</span><br>
-            <input id="sub_1_2" name="sub_1_2" title="Negative Feedback" type="text">
+          <span>11. Dealer Name</span><br>
+            <input id="sub_1_15" name="sub_1_15" placeholder="Dealer Name" type="text">
         </div>
 
            <div class="input-field col s12 center_it">
@@ -89,7 +161,7 @@
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript" src="js/localforage.min.js"></script>
 <script type="text/javascript" src="js/sweet.js"></script>
-<!-- <script type="text/javascript" src="js/index.js"></script> -->
+<script type="text/javascript" src="js/index.js"></script> 
 <script type="text/javascript" src="js/location.js"></script>
 
 <script type="text/javascript">
@@ -117,8 +189,7 @@ app.prefill();
 $('#branding_btn').click(function(e) {
 
  //alert("hh")
-LINK="https://igurukenya.com/SKOPE/cng/scripts/";
-//LINK="scripts/";
+LINK="scripts/";
 
  if (validateForm4 ())
  {
@@ -184,7 +255,7 @@ function validateForm4 ()
     {
         var shouldProceed=true;
         jina = $('#sub_1_4').val();
-        tarehe = $('#sub_1_2').val();
+        tarehe = $('#sub_1_1').val();
          if(!tarehe)
         {
              app.appNotifier("Tafadhali Weka Tarehe");

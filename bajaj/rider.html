@@ -19,10 +19,10 @@
 
 	<nav>
 		<div class=" topmenu left_menu">
-
+      <a href="page.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
 		</div>
 		<div class=" topmenu centered_menu">
-			DEALER DATA
+			RIDER DATA
 		</div>
 		<div class=" topmenu right_menu">
     <a href="index.html" ><i class="fa fa-home fa-2x"></i></a>
@@ -55,6 +55,8 @@
            <input id="ba_name" name="ba_name"  type="hidden">
            <input id="ba_phone" name="ba_phone"  type="hidden">
            <input id="ba_region" name="ba_region"  type="hidden">
+           <input id="place" name="place" value="RIDER"  type="hidden">
+
 
 
 
@@ -64,80 +66,96 @@
 
       <div class="input-field col s12">
           <span>Date</span><br>
-            <input id="sub_1_1" name="sub_1_1" title="Date" type="date">
+            <input id="sub_1_1" name="sub_1_1" placeholder="Date" type="date">
 
         </div>
 
           <div class="input-field col s12">
           <span>Region</span><br>
-            <input id="sub_1_2" name="sub_1_2" title="Region" type="text">
+            <input id="sub_1_2" name="sub_1_2" placeholder="Region" type="text">
 
         </div>
           <div class="input-field col s12">
-          <span>Zone</span><br>
-            <input id="sub_1_3" name="sub_1_3" title="Zone" type="text">
-
+          <span>Town</span><br>
+            <input id="sub_1_3" name="sub_1_3" placeholder="Town" type="text">
         </div>
+
+          <div class="input-field col s12">
+          <span>Location</span><br>
+            <input id="sub_1_4" name="sub_1_4" placeholder="Location" type="text">
+        </div>
+
+
         <h1>Questionnaire</h1>
 
         <div class="input-field col s12">
-          <span>1. Promoter Name </span><br>
-            <input id="sub_1_4" name="sub_1_4" title="Promoter Name" type="text">
+          <span>1. Field Officer </span><br>
+            <input id="sub_1_5" name="sub_1_5" placeholder="Field Officer" type="text">
         </div>
 
          <div class="input-field col s12">
-          <span>2. Contacts</span><br>
-            <input id="sub_1_5" name="sub_1_5" title="Contacts" type="tel">
+          <span>2. Promoter Contacts</span><br>
+            <input id="sub_1_6" name="sub_1_6" placeholder="Contacts" type="tel">
         </div>
 
         <div class="input-field col s12">
-          <span>3. RSM</span><br>
-            <input id="sub_1_6" name="sub_1_6" title="RSM" type="text">
+          <span>3. Name of the stand  activated?</span><br>
+            <input id="sub_1_7" name="sub_1_7" placeholder="Name of the stand  activated?" type="text">
 
         </div>
 
         <div class="input-field col s12">
-          <span>3. Date of Sale</span><br>
-            <input id="sub_1_7" name="sub_1_7" title="Date of Sale" type="date">
+          <span>4. Rider Name</span><br>
+            <input id="sub_1_8" name="sub_1_8" placeholder="Rider Name" type="text">
         </div>
 
         <div class="input-field col s12">
-          <span>4. Customer Name</span><br>
-            <input id="sub_1_8" name="sub_1_8" title="Customer Name" type="text">
+          <span>5. Contact number</span><br>
+            <input id="sub_1_9" name="sub_1_9" placeholder="Contact number" type="tel">
         </div>
 
         <div class="input-field col s12">
-          <span>5. Customer Contacts Number</span><br>
-            <input id="sub_1_9" name="sub_1_9" title="Customer Contact" type="tel">
+          <span>6. Name of Bikes</span><br>
+            <input id="sub_1_10" name="sub_1_10" placeholder="Name of Bikes" type="text">
         </div>
 
         <div class="input-field col s12">
-          <span>6. Boxer Model</span><br>
-            <input id="sub_1_10" name="sub_1_10" title="Boxer Model" type="text">
+          <span>7. Age of Bike</span><br>
+            <input id="sub_1_11" name="sub_1_11" placeholder="Age of Bike" type="text">
         </div>
 
         <div class="input-field col s12">
-          <span>7. No of Bike Purchased</span><br>
-            <input id="sub_1_11" name="sub_1_11" title="Bike Purchased" type="number">
+          <span>8. Scheme Introduced  ( yes or no)</span><br>
+          <select name="sub_1_12" id="sub_1_12" style="display: block;">
+            <option value="">Select your answer</option>
+            <option id="yes" value="Yes">Yes</option>
+            <option id="yes" value="No">No</option>
+          </select>
         </div>
 
         <div class="input-field col s12">
-          <span>8. Coupon Number</span><br>
-            <input id="sub_1_12" name="sub_1_12" title="Coupon Number" type="number">
+          <span>9. Fliers Distributed </span><br>
+            <input id="sub_1_13" name="sub_1_13" placeholder="Fliers Distributed " type="text">
         </div>
 
         <div class="input-field col s12">
-          <span>9. Chasis Number</span><br>
-            <input id="sub_1_13" name="sub_1_13" title="Chasis Number" type="number">
+          <span>10. Interest to Buy Boxer during Scheme</span><br>
+            <input id="sub_1_14" name="sub_1_14" placeholder="Interest to Buy Boxer during Scheme" type="text">
         </div>
 
         <div class="input-field col s12">
-          <span>10. Registration Number</span><br>
-            <input id="sub_1_14" name="sub_1_14" title="Registration Number" type="text">
+          <span>11. Expected to buy (When)</span><br>
+            <input id="sub_1_15" name="sub_1_15" placeholder="Expected to buy (When)" type="text">
+        </div>
+
+        <h1>Feedback</h1>
+        <div class="input-field col s12">
+          <span>1. Positive Feedback</span><br>
+            <input id="sub_1_16" name="sub_1_16" placeholder="Positive Feedback" type="text">
         </div>
         <div class="input-field col s12">
-          <span>11. Dealer Name</span><br>
-            <input id="sub_1_15" name="sub_1_15" title="Dealer Name" type="text">
+          <span>2. Area of Improvement|negative feedback</span><br>
+            <input id="sub_1_17" name="sub_1_17" placeholder="Negative Feedback" type="text">
         </div>
 
            <div class="input-field col s12 center_it">
@@ -160,7 +178,7 @@
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript" src="js/localforage.min.js"></script>
 <script type="text/javascript" src="js/sweet.js"></script>
-<!-- <script type="text/javascript" src="js/index.js"></script> -->
+ <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/location.js"></script>
 
 <script type="text/javascript">
@@ -188,8 +206,7 @@ app.prefill();
 $('#branding_btn').click(function(e) {
 
  //alert("hh")
-LINK="https://igurukenya.com/SKOPE/cng/scripts/";
-//LINK="scripts/";
+LINK="scripts/";
 
  if (validateForm4 ())
  {
