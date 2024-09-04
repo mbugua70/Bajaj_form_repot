@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>BAJAJ</title>
+
+  <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+	<link rel="stylesheet" href="css/materialize.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+	<nav>
+		<div class=" topmenu left_menu">
+      <a href="page.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+		</div>
+		<div class=" topmenu centered_menu">
+			FLEET OWNER DATA
+		</div>
+		<div class=" topmenu right_menu">
+    <a href="index.html" ><i class="fa fa-home fa-2x"></i></a>
+    </div>
+		 </nav>
+
+
+ <div class="main_body">
+
+
+  <div class="row parcel_form">
+
+ <div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel  deep-orange darken-3">
+        <span class="white-text">
+          Your Details<br>
+           Name: <span id="rba_name"></span><br>
+           Phone: <span id="rba_phone"></span><br>
+           Region: <span id="rba_region"></span><br>
+
+        </span>
+        <br>
+        <a class="btn btn-small yellow darken-2" href="registration.html">Edit Details</a>
+      </div>
+    </div>
+  </div>
+
+<form id="data_form">
+           <input id="ba_name" name="ba_name"  type="hidden">
+           <input id="ba_phone" name="ba_phone"  type="hidden">
+           <input id="ba_region" name="ba_region"  type="hidden">
+           <input id="place" name="place" value="FLEET"  type="hidden">
+
+
+
+
+        <!-- insert location details (gps) -->
+          <h1>LOCATION DETAILS</h1>
+
+
+      <div class="input-field col s12">
+          <span>DATE</span><br>
+            <input id="sub_1_1" name="sub_1_1" placeholder="Date" type="date">
+
+        </div>
+
+          <div class="input-field col s12">
+          <span>REGION</span><br>
+            <input id="sub_1_2" name="sub_1_2" placeholder="Region" type="text">
+
+        </div>
+          <div class="input-field col s12">
+          <span>TOWN</span><br>
+            <input id="sub_1_3" name="sub_1_2" placeholder="Town" type="text">
+
+        </div>
+          <div class="input-field col s12">
+          <span>LOCATION</span><br>
+            <input id="sub_1_4" name="sub_1_4" placeholder="Location" type="text">
+
+        </div>
+        <h1>Questionnaire</h1>
+
+        <div class="input-field col s12">
+          <span>1. Name of the stand  activated?</span><br>
+            <input id="sub_1_5" name="sub_1_5" placeholder="Stand Activated" type="text">
+        </div>
+
+         <div class="input-field col s12">
+          <span>2. Fleet owner Name</span><br>
+            <input id="sub_1_6" name="sub_1_6" placeholder="Fleet Owner Name" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>3. Fleet owner contact Details</span><br>
+            <input id="sub_1_7" name="sub_1_7" placeholder="Contacts" type="tel">
+
+        </div>
+
+        <div class="input-field col s12">
+          <span>4. No.of Bikes he|she owns</span><br>
+            <input id="sub_1_8" name="sub_1_8" placeholder="No of Bikes" type="number">
+        </div>
+
+        <h1>Number of bike on each specific stand as per the brands ?</h1>
+        <div class="input-field col s12">
+          <span>1.  TVS HLX 125</span><br>
+            <input id="sub_1_9" name="sub_1_9" placeholder="TVS HLX 125" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>2. TVS HLX 150</span><br>
+            <input id="sub_1_10" name="sub_1_10" placeholder="TVS HLX 150" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>3. Boxer 100</span><br>
+            <input id="sub_1_11" name="sub_1_11" placeholder="Boxer 100" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>4. Boxer 125</span><br>
+            <input id="sub_1_12" name="sub_1_12" placeholder="Boxer 125" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>5. Boxer X 125</span><br>
+            <input id="sub_1_13" name="sub_1_13" placeholder="Boxer X 125" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>6. Boxer BM 150</span><br>
+            <input id="sub_1_14" name="sub_1_14" placeholder="Boxer BM 150" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>7. Boxer BM X150</span><br>
+            <input id="sub_1_15" name="sub_1_15" placeholder="Boxer BM X150" type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>8. Boxer 150 HD</span><br>
+            <input id="sub_1_16" name="sub_1_16" placeholder="Boxer 150 HD" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>9. Boxer 125 HD</span><br>
+            <input id="sub_1_17" name="sub_1_17" placeholder="Boxer 125 HD" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>10. Fekon </span><br>
+            <input id="sub_1_18" name="sub_1_18" placeholder="Fekon" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>11. Haojue </span><br>
+            <input id="sub_1_19" name="sub_1_19" placeholder="Haojue" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>12. King Lion</span><br>
+            <input id="sub_1_20" name="sub_1_20" placeholder="King Lion" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>13. SANG LG</span><br>
+            <input id="sub_1_21" name="sub_1_21" placeholder="SANG LG" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>14. Sanya </span><br>
+            <input id="sub_1_22" name="sub_1_22" placeholder="Sanya " type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>15. Shinoray </span><br>
+            <input id="sub_1_23" name="sub_1_23" placeholder="Shinoray" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>16. SKYMARK 125</span><br>
+            <input id="sub_1_24" name="sub_1_24" placeholder="SKYMARK 125" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>17. Others</span><br>
+            <input id="sub_1_25" name="sub_1_25" placeholder="Others" type="text">
+        </div>
+
+         <h1>Strength of the stand </h1>
+
+         <div class="input-field col s12">
+            <span>1. Strength of the stand</span><br>
+              <input id="sub_1_26" name="sub_1_26" placeholder="Strength of the stand" type="text">
+          </div>
+
+         <div class="input-field col s12">
+            <span>2. Strength of Boxer</span><br>
+              <input id="sub_1_27" name="sub_1_27" placeholder="Strength of Boxer" type="text">
+          </div>
+         <div class="input-field col s12">
+            <span>3. Strength of Chinese</span><br>
+              <input id="sub_1_28" name="sub_1_28" placeholder="Strength of Chinese" type="text">
+          </div>
+
+         <div class="input-field col s12">
+            <span>4. Strength of TVS</span><br>
+              <input id="sub_1_29" name="sub_1_29" placeholder="Strength of TVS" type="text">
+          </div>
+
+         <div class="input-field col s12">
+            <span>5. Rider Strength</span><br>
+              <input id="sub_1_30" name="sub_1_30" placeholder="Rider Strength" type="text">
+          </div>
+           <div class="input-field col s12 center_it">
+        <button id="branding_btn" class="btn-large  margin-bottom waves-effect waves-light pick_color" type="button">  Upload Information <i class="fa fa-send"></i></button>
+      </div>
+
+</form>
+
+
+
+
+
+
+  </div>
+
+ </div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/localforage.min.js"></script>
+<script type="text/javascript" src="js/sweet.js"></script>
+ <script type="text/javascript" src="js/index.js"></script> 
+<script type="text/javascript" src="js/location.js"></script>
+
+<script type="text/javascript">
+
+  // unchecked radio button
+$(document).ready(function(){
+  $('.row-checked input[type="radio"]').click(function(){
+    var parentDiv = $(this).closest('.row-checked');
+    var name = $(this).attr('name');
+    parentDiv.find('input[type="radio"]').each(function(){
+      if($(this).attr('name') !== name) {
+        $(this).prop('checked', false);
+      }
+    });
+  });
+});
+
+
+app.prefill();
+
+
+
+
+
+$('#branding_btn').click(function(e) {
+
+ //alert("hh")
+LINK="scripts/";
+
+ if (validateForm4 ())
+ {
+
+ serialized=$("#data_form").serialize();
+
+    $.ajax({
+        type:'POST',
+        url: LINK+'BM.php',
+        data:serialized,
+
+        beforeSend: function() {
+      $("#branding_btn").html('<i class="fa fa-spinner fa-spin fa-3x"></i> Uploading...');
+        console.log("Matana");
+    },
+
+        dataType: 'json',
+        success:function(data){
+
+          res=data.response;
+          if (res=="success") {
+             $("#branding_btn").html('<i class="fa fa-check-circle fa-3x"></i> Upload Details');
+          swal({
+      title: "Sent Successfully",
+      text: "Thank You",
+      icon: "success",
+      });
+
+          setTimeout(function(e){
+            $('#data_form').trigger("reset");
+            //$("#channel").val(channel)
+       //     $("#date").val(tarehe)
+
+          }, 2000)
+          }
+          else{
+            console.log(data)
+          }
+
+
+        },
+        error: function(data){
+            console.log(data);
+            swal({
+            title: "Network Error, Please try again",
+            text: "",
+            icon: "error",
+            });
+            $("#branding_btn").html('<i class="fa fa-upload fa-3x"></i> Upload');
+        }
+    });
+
+ }
+
+
+
+    e.preventDefault();
+
+});
+
+
+function validateForm4 ()
+    {
+        var shouldProceed=true;
+        jina = $('#sub_1_4').val();
+        tarehe = $('#sub_1_2').val();
+         if(!tarehe)
+        {
+             app.appNotifier("Tafadhali Weka Tarehe");
+             $('#sub_1_2').focus();
+             shouldProceed=false;
+        }
+        if(!jina)
+        {
+             app.appNotifier("Tafadhali Weka Jina");
+             $('#sub_1_4').focus();
+             shouldProceed=false;
+        }
+
+        return shouldProceed;
+    }
+
+</script>
+</body>
+</html>
